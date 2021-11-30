@@ -1,0 +1,18 @@
+
+$primary-color: #1e555c;
+$secondary-color: #3a2e39;
+$font-titles: Helvetica, sans-serif;
+
+h1 {
+    color: $primary-color;
+    font: 5em $font-titles;
+}
+
+h2, h3 {
+    color: $secondary-color;
+    font: 2em $font-titles;
+}
+
+body {
+    margin: 2em;
+}

@@ -1,0 +1,12 @@
+<h2>{{ tournament.name | uppercase }} Details</h2>
+<div><span>id: </span>{{ tournament.id }}</div>
+<div>
+    <label for="name">tournament name: </label>
+    <input id=name [(ngModel)]="tournament.name" placeholder="name">
+</div>
+<div><span>description: </span>{{ tournament.description }}</div>
+<div><span>place: </span>{{ tournament.place }}</div>
+<div><span>dateStart: </span>{{ tournament.dateStart }}</div>
+<div><span>dateEnd: </span>{{ tournament.dateEnd }}</div>
+<div><span>playersQty: </span>{{ tournament.playersQty }}</div>
+<div><span>fieldsQty: </span>{{ tournament.fieldsQty }}</div>
