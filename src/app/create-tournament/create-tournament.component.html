@@ -1,0 +1,54 @@
+<form class="form" [formGroup]="createTournamentForm" (ngSubmit)="onSubmit()">
+
+    <div class="property-container">
+        <label for="name">Tournament Name: </label>
+        <input id=name placeholder="name" value="Baseball Tournament" formControlName="name">
+    </div>
+
+    <div class=" property-container">
+        <label for="description">Tournament Description: </label>
+        <input id=description placeholder="description" value="A tournament" formControlName="description">
+    </div>
+
+    <div class="property-container">
+        <label for="organizer">Tournament Organizer: </label>
+        <input id=organizer placeholder="organizer" value="1" formControlName="organizer">
+    </div>
+
+    <div class="property-container">
+        <label for="place">Tournament Place: </label>
+        <input id=place placeholder="place" value="1st place" formControlName="place">
+    </div>
+
+    <div class="property-container">
+        <label for="game">Tournament Game: </label>
+        <input type="text" id=game placeholder="game" value="Baseball" formControlName="game">
+    </div>
+
+    <div class="property-container">
+        <label for="dateStart">Tournament Date Start: </label>
+        <input type="date" id=dateStart placeholder="name" value="10-10-2021" formControlName="dateStart">
+    </div>
+    <div class="property-container">
+        <label for="dateEnd">Tournament Date End: </label>
+        <input type="date" id=dateEnd placeholder="name" value="10-10-2021" formControlName="dateEnd">
+    </div>
+    <div class="property-container">
+        <label for="playersQty">Tournament Number of Players: </label>
+        <input type="number" id=playersQty placeholder="name" value="6" formControlName="playersQty">
+    </div>
+    <div class="property-container">
+        <label for="fieldsQty">Tournament Number of Fields: </label>
+        <input type="number" id=fieldsQty placeholder="name" value="3" formControlName="fieldsQty">
+    </div>
+
+    <p>Complete the form to enable button.</p>
+    <button type="submit" [disabled]="!createTournamentForm.valid">Submit</button>
+
+</form>
+
+<!-- <button (click)="submitTournament()">
+    Submit
+</button> -->
+
+<router-outlet></router-outlet>

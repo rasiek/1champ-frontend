@@ -6,10 +6,19 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<header>
+    <h1>{{title}}</h1>
 
-<h1>{{title}}</h1>
+    <nav>
+        <a routerLink="/dashboard">Dashboard</a>
+        <a routerLink="/tournaments">Tournaments</a>
+        <a routerLink="/create-tournament">Create Tournament</a>
+        <a routerLink="/create-user">Create User</a>
+    </nav>
+</header>
 
-<app-tournament></app-tournament>
+<router-outlet></router-outlet>
+<app-messages></app-messages>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
@@ -18,5 +27,3 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-<router-outlet></router-outlet>

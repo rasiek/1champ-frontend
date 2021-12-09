@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Tournament } from '../tournament';
+import { MessageService } from '../message.service';
+import { Tournoi } from '../../interfaces/tournoi';
+import { TournamentService } from '../tournament.service';
 
 @Component({
   selector: 'app-tournament',
@@ -8,20 +10,17 @@ import { Tournament } from '../tournament';
 })
 export class TournamentComponent implements OnInit {
 
-  tournament: Tournament = {
-    id: 1,
-    name: 'Beach Volley',
-    description: 'description',
-    place: 'albert street',
-    dateStart: new Date(2021, 12, 1),
-    dateEnd: new Date(2021, 12, 15),
-    game: 'volley',
-    playersQty: 4,
-    fieldsQty: 2,
-  };
-  constructor() { }
+  tournaments: Tournoi[] = [];
+
+  constructor(private tournamentService: TournamentService, private messageService: MessageService) { }
+
+  getTournaments(): void {
+    this.tournamentService.getList()
+      .subscribe(tournaments => this.tournaments = tournaments);
+  }
 
   ngOnInit(): void {
+    this.getTournaments();
   }
 
 }

@@ -1,0 +1,15 @@
+<form class="form" [formGroup]="createUserForm" (ngSubmit)="onSubmit()">
+
+    <div class="property-container">
+        <label for="username">Username: </label>
+        <input id=username placeholder="username" formControlName="username">
+    </div>
+
+    <div class=" property-container">
+        <label for="password">Password: </label>
+        <input type="password" id=password placeholder="password" formControlName="password">
+    </div>
+
+    <button type="submit" [disabled]="!createUserForm.valid">Submit</button>
+
+</form>

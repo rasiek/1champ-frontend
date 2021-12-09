@@ -1,0 +1,17 @@
+<div *ngIf="tour">
+
+    <h2>{{ tour.name | uppercase }} Details</h2>
+    <div><span>id: </span>{{ tour.id }}</div>
+    <div>
+        <label for="name">tour name: </label>
+        <input id=name [(ngModel)]="tour.name" placeholder="name">
+    </div>
+    <div><span>description: </span>{{ tour.description }}</div>
+    <div><span>place: </span>{{ tour.place }}</div>
+    <div><span>dateStart: </span>{{ tour.dateStart }}</div>
+    <div><span>dateEnd: </span>{{ tour.dateEnd }}</div>
+    <div><span>playersQty: </span>{{ tour.playersQty }}</div>
+    <div><span>fieldsQty: </span>{{ tour.fieldsQty }}</div>
+</div>
+
+<button (click)="goBack()">Go back</button>

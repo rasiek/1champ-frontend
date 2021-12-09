@@ -1,0 +1,9 @@
+<h2>Top Tournaments</h2>
+
+<div class="tournaments-menu">
+
+    <a *ngFor="let tour of tournaments" routerLink="/detail/{{ tour.id }}">
+        {{ tour.name }}
+    </a>
+
+</div>

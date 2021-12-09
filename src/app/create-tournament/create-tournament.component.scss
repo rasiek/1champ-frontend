@@ -1,0 +1,21 @@
+label {
+  color: #435960;
+  font-weight: bold;
+}
+input {
+  font-size: 1em;
+  padding: .5rem;
+}
+
+.property-container {
+
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 10px 5px;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
