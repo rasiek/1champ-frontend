@@ -2,9 +2,11 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+let ip = "172.25.49.55"
+
 export const environment = {
   production: false,
-  APIUrl: 'http://172.25.165.165:8000/api'
+  APIUrl: `http://${ip}:8000/api`
 };
 
 /*
