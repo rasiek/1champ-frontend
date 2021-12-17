@@ -1,6 +1,6 @@
-<form class="form" [formGroup]="createTournamentForm" (ngSubmit)="onSubmit()">
+<!-- <form class="form" [formGroup]="createTournamentForm" (ngSubmit)="onSubmit()">
 
-    <div class="property-container">
+    <div class="tw-input">
         <label for="name">Tournament Name: </label>
         <input id=name placeholder="name" value="Baseball Tournament" formControlName="name">
     </div>
@@ -45,10 +45,89 @@
     <p>Complete the form to enable button.</p>
     <button type="submit" [disabled]="!createTournamentForm.valid">Submit</button>
 
+</form> -->
+
+<form class="tw-form" [formGroup]="createTourForm" (ngSubmit)="onValidateTourForm()" [hidden]="tourFormValidated">
+
+    <div class="tw-input">
+        <label for="name">Tournament Name: </label>
+        <input type="text" id=name placeholder="name" value="3" formControlName="name">
+    </div>
+
+    <div class="tw-input">
+        <label for="rounds">Tournament Rounds: </label>
+        <input type="number" id=rounds placeholder="name" value="3" formControlName="roundsNb">
+    </div>
+
+    <div class="tw-input">
+        <label for="teams">Tournament Teams: </label>
+        <input type="number" id=teams placeholder="name" value="3" formControlName="teamsNb">
+    </div>
+
+    <div class="tw-input">
+        <label for="firstRoundName">First Round Name: </label>
+        <input type="text" id=firstRoundName placeholder="First Round Name" value="3" formControlName="teamsNb">
+    </div>
+
+    <button class="tw-blue-btn" type="submit" [disabled]="!createTourForm.valid">Submit</button>
+
 </form>
 
-<!-- <button (click)="submitTournament()">
-    Submit
-</button> -->
+<form class="tw-form" [formGroup]="createRoundForm" (ngSubmit)="onValidateRoundForm()" [hidden]="!tourFormValidated">
+
+    <div class="tw-input">
+        <label for="name">Round Name: </label>
+        <input type="text" id=name placeholder="name" formControlName="name">
+    </div>
+
+    <div class="tw-input">
+        <label for="pools">Round pools: </label>
+        <input type="number" id=pools placeholder="name" formControlName="poolsNb">
+    </div>
+
+    <div class="tw-input">
+        <label for="classByPool">Classificated By Pool: </label>
+        <input type="number" id=classByPool placeholder="name" formControlName="classificatedByPool">
+    </div>
+
+    <button type="submit" [disabled]="!createRoundForm.valid">Submit</button>
+
+</form>
+
+<h2 *ngIf="tournament.name">{{tournament.name}}</h2>
+
+
+<button (click)="addComponent()">Add Component</button>
+
+
+<ng-template appTournamentSchema></ng-template>
+
+
+<!-- <div class="tw-schema">
+
+    <ng-container *ngIf="tournament.rounds">
+        <div *ngFor="let num of tournament.rounds | fill" class="w-3/4 h-3/4 bg-blue-300">
+
+        </div>
+
+    </ng-container>
+</div> -->
+
+
+<!-- <div class="schema">
+    <ng-container *ngIf="tournament.rounds">
+        <div *ngFor="let num of tournament.rounds | fill">
+            <ng-container *ngIf="tournament.nbTeams">
+                <app-team *ngFor="let num of [].constructor(4)" [nbTeams]="tournament.nbTeams">
+                </app-team>
+            </ng-container>
+        </div>
+
+    </ng-container>
+    <div ngFor="let item of list" *ngIf="model.rounds">
+        <app-team *ngIf="model.nbTeams" ngFor="let num of [].constructor(model.nbTeams)" [nbTeams]="model.nbTeams">
+        </app-team>
+    </div>
+</div> -->
 
 <router-outlet></router-outlet>

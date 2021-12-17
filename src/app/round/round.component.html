@@ -1,0 +1,13 @@
+<div class="tw-round">
+    {{ name }}
+    <ng-container *ngIf="poolNum">
+        <div *ngFor="let num of poolNum | fill">
+            <p>pool No.: {{ num + 1 }}</p>
+            <ng-container *ngIf="teamsByPool">
+                <div *ngFor="let team of teamsByPool | fill">
+                    <p>Equipe No.: {{ team +1 }}</p>
+                </div>
+            </ng-container>
+        </div>
+    </ng-container>
+</div>

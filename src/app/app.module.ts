@@ -12,6 +12,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateTournamentComponent } from './create-tournament/create-tournament.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { ConfigureComponent } from './configure/configure.component';
+import { TeamComponent } from './team/team.component';
+import { FillPipe } from 'src/app/FillPipe';
+import { TournamentSchemaDirective } from './tournament-schema.directive';
+import { RoundComponent } from './round/round.component';
 
 
 @NgModule({
@@ -23,7 +27,11 @@ import { ConfigureComponent } from './configure/configure.component';
     DashboardComponent,
     CreateTournamentComponent,
     CreateUserComponent,
-    ConfigureComponent
+    ConfigureComponent,
+    TeamComponent,
+    FillPipe,
+    TournamentSchemaDirective,
+    RoundComponent
   ],
   imports: [
     BrowserModule,
